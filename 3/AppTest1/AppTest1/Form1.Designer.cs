@@ -59,7 +59,7 @@
             richTextBox1.Name = "richTextBox1";
             richTextBox1.Size = new Size(819, 580);
             richTextBox1.TabIndex = 2;
-            richTextBox1.Text = "";
+            richTextBox1.Text = "This sample is only for test.And has not all standard principle.\nI use .Net6 for this sample.\n";
             // 
             // Form1
             // 
