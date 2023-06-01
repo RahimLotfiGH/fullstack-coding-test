@@ -1,0 +1,33 @@
+  
+  public static int[] GetIntersection(int[] arrayOne, int[] arrayTwo)
+        {
+            var intersection = new List<int>();
+
+            foreach (int Item in arrayOne)  // O(N^2)
+            {
+                foreach (int Item2 in arrayTwo)// we can use binnery search in this part O(NLogn)
+                {
+                    if (Item == Item2)
+                        intersection.Add(Item);
+
+                }
+
+            }
+
+            return intersection.ToArray();
+        }
+
+        //Use Parallel is good for performanc
+        public static int[] GetIntersection1(int[] arrayOne, int[] arrayTwo)
+        {
+            var intersection = (from int Item in arrayOne
+                                from int Item2 in arrayTwo
+                                where Item == Item2
+                                select Item)
+                                .AsParallel()
+                                .WithDegreeOfParallelism(Environment.ProcessorCount)
+                                .ToList();
+
+
+            return intersection.ToArray();
+        }
