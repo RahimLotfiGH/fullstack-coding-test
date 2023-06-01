@@ -1,0 +1,5 @@
+N=AArray  length
+M=BArray  length
+
+We have two nested loop N*M=O(NM)
+If we use binary search O(NlogM)
