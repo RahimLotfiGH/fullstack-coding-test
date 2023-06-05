@@ -31,6 +31,7 @@
             button1 = new Button();
             button2 = new Button();
             richTextBox1 = new RichTextBox();
+            label1 = new Label();
             SuspendLayout();
             // 
             // button1
@@ -61,17 +62,28 @@
             richTextBox1.TabIndex = 2;
             richTextBox1.Text = "This sample is only for test.And has not all standard principle.\nI use .Net6 for this sample.\n";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(346, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(42, 15);
+            label1.TabIndex = 3;
+            label1.Text = "Result:";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1200, 636);
+            Controls.Add(label1);
             Controls.Add(richTextBox1);
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -79,5 +91,6 @@
         private Button button1;
         private Button button2;
         private RichTextBox richTextBox1;
+        private Label label1;
     }
 }
