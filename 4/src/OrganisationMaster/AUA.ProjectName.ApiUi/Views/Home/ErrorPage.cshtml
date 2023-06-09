@@ -1,0 +1,13 @@
+﻿@model AUA.ProjectName.Models.ViewModels.BaseViewModel.ErrorPageVm
+
+@{
+    ViewBag.Title = "Error " + Model.ErrorCode;
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div style="width: 80%; margin: auto" class="container-fluid">
+        <h1 style="text-align: center">Error @Model.ErrorCode</h1>
+        <h3 style="text-align: center">@Model.Message</h3>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿@model AUA.ProjectName.Models.ViewModels.Accounting.AppUserModels.AppUserInsertVm
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="container-fluid">
+        <div style="margin: auto; margin-top: 70px" class="col-xxl-4 col-xl-4 col-sm-12 col-md-4">
+            
+            <div style="margin-bottom: 30px">
+                <h1 style="text-align: center; font-weight: bold">Register</h1>
+            </div>
+
+            <form action="/Accounting/Account/Register" style="border: none" method="post" class="form-control">
+
+                <input class="form-control" required type="text" name="FirstName" placeholder="Name"/>
+                <br/>
+
+                <input class="form-control" required type="text" name="LastName" placeholder="Last Name" />
+                <br/>
+
+                <input class="form-control" required type="text" name="UserName" placeholder="UserName"/>
+                <br/>
+
+                <input class="form-control" required type="password" name="Password" placeholder="Password"/>
+                <br/>
+
+                <button type="submit" class="btn btn-secondary w-100 mb-2">Register</button>
+                <a href="/Accounting/Account/Login" type="submit" class="btn btn-outline-secondary w-100">Login</a>
+            </form>
+        </div>
+    </div>
+</div>

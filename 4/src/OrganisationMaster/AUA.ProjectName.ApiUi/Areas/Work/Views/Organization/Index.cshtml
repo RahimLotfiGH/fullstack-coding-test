@@ -1,0 +1,48 @@
+﻿@model IList<AUA.ProjectName.Models.EntitiesDto.Work.OrganizationDto>
+
+@{
+    ViewBag.Title = "Your Organizations";
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="container-fluid">
+        <div style="margin: auto; margin-top: 70px" class="col-12">
+
+            <div style="margin-bottom: 30px">
+                <h1 style="text-align: center; font-weight: bold">Organizations</h1>
+                <p style="text-align: center"><a style="text-decoration: none; color: orangered" href="/Work/Organization/Insert">New Organization</a></p>
+            </div>
+
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>
+                                <a href="/Work/OrganizationStructure?organizationId=@item.Id" class="btn btn-secondary">Structure</a>
+                                <a href="/Work/Organization/Update/@item.Id" class="btn btn-warning">Update</a>
+                                <button class="btn btn-danger" onclick="deleteConfirm(@item.Id)">Delete</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+@await Html.PartialAsync("_IndexJs")
+
+<script>
+    $(document).ready(function () {
+        let table = new DataTable('#table');
+    });
+</script>

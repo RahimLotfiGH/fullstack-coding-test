@@ -1,0 +1,34 @@
+﻿@model AUA.ProjectName.Models.GeneralModels.LoginModels.UserLoggedInVm
+
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white box-shadow mb-3">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" style="font-weight: bold; margin-left: 40px" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" style="font-weight: bold; margin-left: 40px" asp-area="Work" asp-controller="Organization" asp-action="Index">Your Organizations</a>
+                </li>
+            </ul>
+            <ul style="justify-content: end;" class="navbar-nav flex-grow-1">
+
+                @if (Model.UserName == null)
+                {
+                    <li class="nav-item"><a class="nav-link" style="font-weight: bold; color: orangered; margin-right: 40px;" asp-area="Accounting" asp-controller="Account" asp-action="Login">Login</a></li>
+                }
+                else
+                {
+                    <li class="nav-item"><a class="nav-link text-black" style="font-weight: bold;" asp-area="Accounting" asp-controller="Profile" asp-action="Index">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" style="font-weight: bold; color: orangered; margin-right: 40px;" asp-area="Accounting" asp-controller="Account" asp-action="Logout">Logout</a></li>
+                }
+
+
+            </ul>
+        </div>
+    </div>
+</nav>

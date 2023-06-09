@@ -1,0 +1,27 @@
+﻿@model AUA.ProjectName.Models.EntitiesDto.Work.OrganizationDto
+
+@{
+    ViewBag.Title = "Update Organization";
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="container-fluid">
+        <div style="margin: auto; margin-top: 70px" class="col-xxl-4 col-xl-4 col-sm-12 col-md-4">
+
+            <div style="margin-bottom: 30px">
+                <h1 style="text-align: center; font-weight: bold">Update Organization</h1>
+            </div>
+
+            <form action="/Work/Organization/Update" style="border: none" method="post" class="form-control">
+                
+                <input type="hidden" name="Id" value="@Model.Id"/>
+                <input class="form-control" required type="text" value="@Model.Name" name="Name" maxlength="200" placeholder="Name" />
+                <br />
+
+                <button type="submit" class="btn btn-secondary w-100 mb-2">Update</button>
+                <a href="/Work/Organization" class="btn btn-outline-secondary w-100">Back</a>
+            </form>
+        </div>
+    </div>
+</div>

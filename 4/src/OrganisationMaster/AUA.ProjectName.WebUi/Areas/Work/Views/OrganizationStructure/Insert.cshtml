@@ -1,0 +1,38 @@
+﻿@model AUA.ProjectName.Models.ViewModels.Work.OrganizationStructure.InsertActionStructureVm
+
+@{
+    ViewBag.Title = "Insert " + Model.OrganizationDto.Name + " Structure";
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="container-fluid">
+        <div style="margin: auto; margin-top: 70px" class="col-xxl-4 col-xl-4 col-sm-12 col-md-4">
+
+            <div style="margin-bottom: 30px">
+                <h1 style="text-align: center; font-weight: bold">Insert  @Model.OrganizationDto.Name Structure</h1>
+            </div>
+
+            <form action="/Work/OrganizationStructure/Insert" style="border: none" method="post" class="form-control">
+                
+                <input type="hidden" name="OrganizationId" value="@Model.OrganizationDto.Id"/>
+
+                <input class="form-control" required type="text" name="NodeLabel" maxlength="200" placeholder="Node Label" />
+                <br />
+
+                <select required name="ParentId" class="form-control">
+                    <option value="0" selected="selected">No Parent</option>
+                    @foreach (var structure in Model.StructureDtos)
+                    {
+                        <option value="@structure.Id">@structure.NodeLabel</option>
+                    }
+                </select>
+                <br/>
+                
+
+                <button type="submit" class="btn btn-secondary w-100 mb-2">Insert</button>
+                <a href="/Work/OrganizationStructure?OrganizationId=@Model.OrganizationDto.Id" class="btn btn-outline-secondary w-100">Back</a>
+            </form>
+        </div>
+    </div>
+</div>

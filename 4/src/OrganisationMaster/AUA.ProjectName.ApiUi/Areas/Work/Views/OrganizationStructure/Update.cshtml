@@ -1,0 +1,33 @@
+﻿@model AUA.ProjectName.Models.ViewModels.Work.OrganizationStructure.UpdateActionStructureVm
+
+@{
+    ViewBag.Title = "Update Structure";
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="container-fluid">
+        <div style="margin: auto; margin-top: 70px" class="col-xxl-4 col-xl-4 col-sm-12 col-md-4">
+
+            <div style="margin-bottom: 30px">
+                <h1 style="text-align: center; font-weight: bold">Update  @Model.OrganizationStructureDto.OrganizationDto.Name Structure</h1>
+            </div>
+
+            <form action="/Work/OrganizationStructure/Update" style="border: none" method="post" class="form-control">
+                
+                <input type="hidden" name="Id" value="@Model.OrganizationStructureDto.Id" />
+
+                <input type="hidden" name="OrganizationId" value="@Model.OrganizationStructureDto.OrganizationDto.Id" />
+                
+                <input type="hidden" name="ParentId" value="@Model.OrganizationStructureDto.ParentId" />
+
+                <input class="form-control" required type="text" name="NodeLabel" maxlength="200" placeholder="Node Label" value="@Model.OrganizationStructureDto.NodeLabel"/>
+                <br />
+
+
+                <button type="submit" class="btn btn-secondary w-100 mb-2">Update</button>
+                <a href="/Work/OrganizationStructure?OrganizationId=@Model.OrganizationStructureDto.OrganizationId" class="btn btn-outline-secondary w-100">Back</a>
+            </form>
+        </div>
+    </div>
+</div>

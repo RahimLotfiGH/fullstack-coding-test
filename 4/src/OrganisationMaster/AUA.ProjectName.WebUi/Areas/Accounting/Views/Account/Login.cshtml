@@ -1,0 +1,29 @@
+﻿@model AUA.ProjectName.Models.GeneralModels.LoginModels.LoginVm
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="container-fluid">
+        <div style="margin: auto; margin-top: 70px" class="col-xxl-4 col-xl-4 col-sm-12 col-md-4">
+
+            <div style="margin-bottom: 30px">
+                <h1 style="text-align: center; font-weight: bold">Login</h1>
+            </div>
+
+            <form action="/Accounting/Account/Login" style="border: none" method="post" class="form-control">
+
+                <input class="form-control" required type="text" name="UserName" placeholder="Username" />
+                <br />
+
+                <input class="form-control" required type="password" name="Password" placeholder="Password" />
+                <br />
+
+                <button type="submit" class="btn btn-secondary w-100 mb-2">Login</button>
+                <a href="/Accounting/Account/Register" type="submit" class="btn btn-outline-secondary w-100">Register</a>
+            </form>
+        </div>
+    </div>
+</div>

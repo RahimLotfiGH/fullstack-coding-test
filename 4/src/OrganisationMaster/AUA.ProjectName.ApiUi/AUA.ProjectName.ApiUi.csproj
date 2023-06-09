@@ -1,0 +1,88 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AUA.ProjectName.ValidationServices\AUA.ProjectName.ValidationServices.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AUA.Mapping">
+      <HintPath>..\AUA.ProjectName.WebApi\bin\Debug\net6.0\AUA.Mapping.dll</HintPath>
+    </Reference>
+    <Reference Include="AUA.ServiceInfrastructure">
+      <HintPath>..\AUA.ProjectName.WebApi\bin\Debug\net6.0\AUA.ServiceInfrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+    <PackageReference Include="RestSharp" Version="110.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Areas\Accounting\Views\Account\Login.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Accounting\Views\Account\Register.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Work\Views\OrganizationStructure\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Work\Views\OrganizationStructure\Update.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Work\Views\Organization\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Work\Views\Organization\Insert.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\Components\Navbar\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\ErrorPage.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Shared\MessageProvider\_DialogMessage.cshtml" />
+    <None Include="Views\Shared\MessageProvider\_HtmlMessage.cshtml" />
+    <None Include="wwwroot\SweetAlert\dist\sweetalert.js" />
+    <None Include="wwwroot\SweetAlert\dist\sweetalert.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Home\ErrorPage.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Accounting\Views\Account\Register.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Accounting\Views\Account\Login.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Shared\Components\Navbar\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Accounting\Views\Profile\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Work\Views\Organization\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Work\Views\Organization\Insert.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Work\Views\OrganizationStructure\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Work\Views\OrganizationStructure\Update.cshtml" />
+  </ItemGroup>
+
+</Project>

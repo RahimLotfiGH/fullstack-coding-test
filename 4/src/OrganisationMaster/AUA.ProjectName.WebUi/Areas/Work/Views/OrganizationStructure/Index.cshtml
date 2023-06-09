@@ -1,0 +1,55 @@
+﻿@model AUA.ProjectName.Models.EntitiesDto.Work.OrganizationDto
+
+@{
+    ViewBag.Title = Model.Name + " Structure";
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="container-fluid">
+        <div style="margin: auto; margin-top: 70px" class="col-12">
+            <div style="margin-bottom: 30px">
+                <h1 style="text-align: center; font-weight: bold"> @Model.Name Structure</h1>
+                <p style="text-align: center"><a style="text-decoration: none; color: orangered" href="/Work/OrganizationStructure/Insert?organizationId=@Model.Id">New Structure</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xl-6 col-xxl-7 col-sm-12 col-md-12">
+        <table id="table">
+            <thead>
+            <tr>
+                <th>Node Label</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model.OrganizationStructuresDto)
+            {
+                <tr>
+                    <td>@item.NodeLabel</td>
+                    <td>
+                            <a href="/Work/OrganizationStructure/Update/@item.Id" class="btn btn-warning">Update</a>
+                        <button class="btn btn-danger" onclick="deleteConfirm(@item.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+
+    <div style="margin-top: 20px;" class="col-xl-6 col-xxl-5 col-sm-12 col-md-12 ">
+        <div id="tree-simple" style="margin: auto; width: 100%; height: 100%"> </div>
+    </div>
+
+</div>
+@await Html.PartialAsync("_IndexJs")
+
+<script>
+    $(document).ready(function () {
+        let table = new DataTable('#table');
+    });
+</script>

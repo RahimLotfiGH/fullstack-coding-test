@@ -1,0 +1,51 @@
+﻿@model AUA.ProjectName.Models.EntitiesDto.Accounting.AppUserDto?
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="container-fluid">
+        <div style="margin: auto; margin-top: 70px" class="col-xxl-4 col-xl-4 col-sm-12 col-md-4">
+
+            <div style="margin-bottom: 30px">
+                <h1 style="text-align: center; font-weight: bold">Hi, @Model.FullName</h1>
+            </div>
+
+            <form action="/Accounting/Profile/Update" style="border: none" method="post" class="form-control">
+                <input class="form-control" required type="text" name="FirstName" value="@Model.FirstName" placeholder="FirstName"/>
+                <br/>
+
+                <input class="form-control" required type="text" name="LastName" value="@Model.LastName" placeholder="FirstName"/>
+                <br/>
+
+                <input class="form-control" required type="text" name="UserName" value="@Model.UserName" readonly="readonly"/>
+                <br/>
+
+                <input class="form-control" required type="email" name="Email" value="@Model.Email" placeholder="Email"/>
+                <br/>
+
+                <input class="form-control" required type="text" name="Phone" value="@Model.Phone" placeholder="Phone"/>
+                <br/>
+
+                <button type="submit" class="btn btn-secondary w-100 mb-2">Update</button>
+            </form>
+            
+            <hr/>
+            
+            <form action="/Accounting/Profile/ChangePassword" style="border: none; margin-top: 30px;" method="post" class="form-control">
+                <input class="form-control" required type="password" name="OldPassword" placeholder="Old Password" />
+                <br />
+
+                <input class="form-control" required type="password" name="NewPassword" placeholder="New Password" />
+                <br />
+
+                <input class="form-control" required type="password" name="ConfirmPassword" placeholder="Confirm Password" />
+                <br />
+
+                <button type="submit" class="btn btn-secondary w-100 mb-2">Change Password</button>
+            </form>
+        </div>
+    </div>
+</div>

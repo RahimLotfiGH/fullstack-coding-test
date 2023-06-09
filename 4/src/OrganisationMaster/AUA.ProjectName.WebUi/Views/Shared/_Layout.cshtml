@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AUA.ProjectName.WebUi</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AUA.ProjectName.WebUi.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" type="text/css" />
+    <link rel="stylesheet" href="/treant/Treant.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+</head>
+<body>
+    <header>
+        @await Component.InvokeAsync("Navbar")
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Organization Master
+        </div>
+    </footer>
+
+    <!-- sweet-alert -->
+    <link href="~/SweetAlert/dist/sweetalert.css" rel="stylesheet" />
+    <script src="~/SweetAlert/dist/sweetalert.js"></script>
+
+    <partial name="MessageProvider/_DialogMessage" />
+    <partial name="_LayoutJs" />
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="/treant/vendor/raphael.js"></script>
+    <script src="/treant/Treant.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

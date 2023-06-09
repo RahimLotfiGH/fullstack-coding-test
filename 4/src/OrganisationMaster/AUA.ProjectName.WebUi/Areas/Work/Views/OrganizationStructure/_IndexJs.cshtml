@@ -1,0 +1,38 @@
+﻿<script>
+    var _deleteUrl = '@Url.Action("_Delete", "OrganizationStructure", new { area = "Work",  id = "__" })';
+</script>
+
+<script>
+    config = {
+        container: "#tree-simple",
+        nodeAlign: "center",
+        connectors: { type: "step", style: { stroke: "orangered" } },
+        node: { HTMLclass: "tree" }
+    };
+
+    @foreach (var structure in Model.OrganizationStructuresDto)
+    {
+        if (structure.ParentId == 0)
+        {
+            @Html.Raw("Node" + structure.Id + " = {text: { name: '"+ structure.NodeLabel +"' , content: { val: 'Update', target: '_self', href: '/Work/OrganizationStructure/Update/" + structure.Id +"' }} }; \n")
+        }
+        else
+        {
+            @Html.Raw("Node" + structure.Id + " = { parent: " + "Node" + structure.ParentId + " ,text: { name: '" + structure.NodeLabel + "', content: { val: 'Update', target: '_self', href: '/Work/OrganizationStructure/Update/" + structure.Id +"' } } }; \n")
+        }
+    }
+
+        simple_chart_config =[
+            config,
+
+    @foreach (var structure in Model.OrganizationStructuresDto)
+    {
+        @Html.Raw("Node" + structure.Id + ",")
+    }
+
+                ];
+
+    $(document).ready(function () {
+        var my_chart = new Treant(simple_chart_config);
+    });
+</script>
